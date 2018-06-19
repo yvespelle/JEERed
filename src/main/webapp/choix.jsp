@@ -12,12 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Bonjour admin ! <br /><br />
+        Bonjour ${identifiants.login} ! <br /><br />
         
         Choisissez votre action : <br /><br />
         <button type="submit" name="action" value="VoirListe">Voir la liste des employés</button>
         <button type="submit" name="action" value="VoirAjouter">Ajouter un employé</button>
-        
-        
     </body>
 </html>
