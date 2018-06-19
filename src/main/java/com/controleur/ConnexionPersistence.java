@@ -18,29 +18,28 @@ import javax.persistence.Query;
  */
 @Stateless
 public class ConnexionPersistence {
-
+    
     @PersistenceContext(unitName = "EmployesServletJPAPU")
     private EntityManager em;
-   
+
     //MODIFIER EMPLOYES (PREPARED STATEMENT) Objet Employes
-  
-    public Collection getEmployes(){
+    public Collection getEmployes() {
         Query q = em.createQuery("SELECT e from Employes e");
         return q.getResultList();
     }
     
-    public Collection getEmployesId(int idEmp){
+    public Collection getEmployesId(int idEmp) {
         Query q = em.createQuery("SELECT e from Employes e where e.id=:idEmp");
         q.setParameter("idEmp", idEmp);
         return q.getResultList();
     }
     
-    public Collection getIdentifiants(){
+    public Collection getIdentifiants() {
         Query q = em.createQuery("SELECT i from Identifiants i");
         return q.getResultList();
     }
     
-    public void modifierEmployes(Employes e){
+    public void modifierEmployes(Employes e) {
         Employes emp = (Employes) em.find(Employes.class, e.getId());
         emp.setNom(e.getNom());
         emp.setPrenom(e.getPrenom());
@@ -53,16 +52,32 @@ public class ConnexionPersistence {
         emp.setEmail(e.getEmail());
         em.persist(emp);        
     }
-
-    public int supprimerEmployes(int idEmp){
+    
+    public int supprimerEmployes(int idEmp) {
         Query q = em.createQuery("DELETE from Employes e where e.id=:idEmp");
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
     }
-
+    
+    public void ajouterEmployes(Employes emp) {
+        
+        em.getTransaction().begin();
+        Employes e = new Employes();
+        e.setAdresse(emp.getAdresse());
+        e.setCodepostal(emp.getCodepostal());
+        e.setEmail(emp.getEmail());
+        e.setNom(emp.getNom());
+        e.setPrenom(emp.getPrenom());
+        e.setTeldom(emp.getTeldom());
+        e.setTelport(emp.getTelport());
+        e.setTelpro(emp.getTelpro());
+        e.setVille(emp.getVille());
+        em.persist(e);
+        em.getTransaction().commit();
+    }
+    
     public void persist(Object object) {
         em.persist(object);
     }
-
-   
+    
 }
