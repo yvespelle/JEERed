@@ -16,6 +16,7 @@ public final class EmployesConstantes {
     public static final String ACTION_DETAILS = "Details";
     public static final String ACTION_MODIFIER = "Modifier";
     public static final String ACTION_VOIR_LISTE = "VoirListe";
+    public static final String ACTION_VOIR_AJOUTER = "VoirAjouter";
     public static final String ACTION_LOGIN = "Login";
 
     //Constantes représentant les input de type text ou radio

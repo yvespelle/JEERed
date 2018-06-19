@@ -15,8 +15,8 @@
         Bonjour admin ! <br /><br />
         
         Choisissez votre action : <br /><br />
-        <a href="tableauresultat.jsp" name="action" >Voir la liste des employés </a><br />
-        <a href="ajouteremploye" name="action">Ajouter un employé</a>
+        <button type="submit" name="action" value="VoirListe">Voir la liste des employés</button>
+        <button type="submit" name="action" value="VoirAjouter">Ajouter un employé</button>
         
         
     </body>
