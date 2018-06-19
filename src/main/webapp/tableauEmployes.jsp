@@ -57,7 +57,6 @@
                         </c:forEach>
 
                     </table>
-                    <input type="submit" value="Retour" name="bouton" class="btn btn-primary">
                     <input type="submit" name="action" value="Supprimer" class="btn btn-primary"/>
                     <input type="submit" name="action" value="Details" class="btn btn-primary"/>
                 </form>
