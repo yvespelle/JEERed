@@ -31,7 +31,7 @@ public class Identifiants implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID2")
+    @Column(name = "ID")
     private Integer id;
     @Size(max = 32)
     @Column(name = "LOGIN")
@@ -43,16 +43,16 @@ public class Identifiants implements Serializable {
     public Identifiants() {
     }
 
-    public Identifiants(Integer id2) {
-        this.id = id2;
+    public Identifiants(Integer id) {
+        this.id = id;
     }
 
-    public Integer getId2() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId2(Integer id2) {
-        this.id = id2;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -93,7 +93,7 @@ public class Identifiants implements Serializable {
 
     @Override
     public String toString() {
-        return "com.controleur.Identifiants[ id2=" + id + " ]";
+        return "com.controleur.Identifiants[ id=" + id + " ]";
     }
     
 }
