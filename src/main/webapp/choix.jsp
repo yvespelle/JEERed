@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Bonjour ${identifiants.login} ! <br /><br />
+        Bonjour admin ! <br /><br />
         
         Choisissez votre action : <br /><br />
          <form action="Controleur" method="post">
