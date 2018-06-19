@@ -11,10 +11,12 @@ public final class EmployesConstantes {
     //Constantes lié aux actions / submit
     public static final String ACTION = "action";
     public static final String ACTION_AJOUTER = "Ajouter";
+    public static final String ACTION_AJOUTER_5 = "Ajouter5";
     public static final String ACTION_SUPPRIMER = "Supprimer";
     public static final String ACTION_DETAILS = "Details";
     public static final String ACTION_MODIFIER = "Modifier";
     public static final String ACTION_VOIR_LISTE = "VoirListe";
+    public static final String ACTION_VOIR_AJOUTER = "VoirAjouter";
     public static final String ACTION_LOGIN = "Login";
 
     //Constantes représentant les input de type text ou radio

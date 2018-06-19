@@ -1,0 +1,144 @@
+<%-- 
+    Document   : ajouter5Employes
+    Created on : 19 juin 2018, 15:38:38
+    Author     : esic
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <form class="form-horizontal" action="Controleur" >
+                    <fieldset>
+                        <legend>Membre n°1 à ajouter</legend>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmNom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Prénom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmPrenom"  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmEmail" class="form-control">
+                            </div>
+                        </div>
+                        <legend>Membre n°2 à ajouter</legend>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmNom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Prénom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmPrenom"  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmEmail" class="form-control">
+                            </div>
+                        </div>
+                        <legend>Membre n°3 à ajouter</legend>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmNom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Prénom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmPrenom"  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmEmail" class="form-control">
+                            </div>
+                        </div>
+                        <legend>Membre n°4 à ajouter</legend>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmNom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Prénom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmPrenom"  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmEmail" class="form-control">
+                            </div>
+                        </div>
+                        <legend>Membre n°5 à ajouter</legend>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Nom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmNom" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Prénom</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmPrenom"  class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="textinput">Adresse e-mail</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="frmEmail" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="pull-right">
+                                    <button type="submit" name="action" value="Ajouter5" class="btn btn-primary">Ajouter</button>
+                                    <button type="submit" name="action" value="VoirListe" class="btn btn-default" >Voir liste</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
