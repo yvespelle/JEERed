@@ -11,6 +11,7 @@ public final class EmployesConstantes {
     //Constantes lié aux actions / submit
     public static final String ACTION = "action";
     public static final String ACTION_AJOUTER = "Ajouter";
+    public static final String ACTION_AJOUTER_5 = "Ajouter5";
     public static final String ACTION_SUPPRIMER = "Supprimer";
     public static final String ACTION_DETAILS = "Details";
     public static final String ACTION_MODIFIER = "Modifier";
