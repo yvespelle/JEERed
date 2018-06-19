@@ -86,6 +86,8 @@ public class Controleur extends HttpServlet {
                             }
                         }
                     }
+                case EmployesConstantes.ACTION_VOIR_LISTE:
+                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                 case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
                 case EmployesConstantes.ACTION_AJOUTER:
