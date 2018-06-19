@@ -42,7 +42,7 @@
 
                         <c:forEach items="${cleListeEmployes}" var="employe">
                             <tr>
-                                <td><input type="radio" name="idEmploye" value="${employe.id}"></td>
+                                <td><input type="radio" name="idEmploye" value="${employe.id}" CHECKED></td>
                                 <td>${employe.nom}</td>
                                 <td>${employe.prenom}</td>
                                 <td>${employe.teldom}</td>
@@ -53,14 +53,28 @@
                                 <td>${employe.ville}</td>
                                 <td>${employe.email}</td>
 
-                            </tr>
+                            </tr>                         
+
                         </c:forEach>
+
+
 
                     </table>
                     <input type="submit" name="action" value="Supprimer" class="btn btn-primary"/>
-                    <input type="submit" name="action" value="Details" class="btn btn-primary"/>
-                </form>
-            </div>
-        </div>         
-    </body>
+                     <%--<c:if test="${!empty cleMessageSupprimer}">--%>
+                    <!--${EmployesConstantes.SUCCES_SUPPR}-->
+
+                <%--</c:if>--%>
+
+
+                <input type="submit" name="action" value="Details" class="btn btn-primary"/>
+                <c:if test="${empty cleListeEmployes}">
+                    <input type="submit" value="créer 5 employes" name="bouton" class="btn btn-primary">
+                </c:if>
+
+
+            </form>
+        </div>
+    </div>         
+</body>
 </html>
