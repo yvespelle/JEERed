@@ -62,7 +62,7 @@ public class ConnexionPersistence {
     //FAIRE UNE AUTRE METHODE QUI SET MOINS DE CARACTERISTIQUES
     public void ajouterEmployes(Employes emp) {
         
-        em.getTransaction().begin();
+//        em.getTransaction().begin();
         Employes e = new Employes();
         e.setAdresse(emp.getAdresse());
         e.setCodepostal(emp.getCodepostal());
@@ -74,7 +74,7 @@ public class ConnexionPersistence {
         e.setTelpro(emp.getTelpro());
         e.setVille(emp.getVille());
         em.persist(e);
-        em.getTransaction().commit();
+//        em.getTransaction().commit();
     }
     
     
