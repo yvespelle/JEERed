@@ -10,6 +10,7 @@ public final class EmployesConstantes {
 
     //Constantes lié aux actions / submit
     public static final String ACTION = "action";
+    public static final String ACTION_AJOUTER = "Ajouter";
     public static final String ACTION_SUPPRIMER = "Supprimer";
     public static final String ACTION_DETAILS = "Details";
     public static final String ACTION_MODIFIER = "Modifier";
@@ -48,6 +49,6 @@ public final class EmployesConstantes {
     public static final String PAGE_TOUS_LES_EMPLOYES = "tableauEmployes.jsp";
     public static final String PAGE_DETAIL_EMPLOYE = "detailsEmploye.jsp";
     public static final String PAGE_CHOIX = "choix.jsp";
-    public static final String PAGE_AJOUTER_UN_EMPLOYE = "ajouterEmploye.jsp";
+    public static final String PAGE_AJOUTER_UN_EMPLOYE = "ajouterUnEmploye.jsp";
 
 }
