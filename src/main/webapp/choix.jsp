@@ -15,7 +15,9 @@
         Bonjour ${identifiants.login} ! <br /><br />
         
         Choisissez votre action : <br /><br />
+         <form action="Controleur" method="post">
         <button type="submit" name="action" value="VoirListe">Voir la liste des employés</button>
         <button type="submit" name="action" value="VoirAjouter">Ajouter un employé</button>
+         </form>
     </body>
 </html>
