@@ -58,7 +58,8 @@ public class ConnexionPersistence {
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
     }
-    
+    //SI NE MARCHE PAS AVEC DES VALEURS NULLES POUR LES CHAMPS NON UTILISES, 
+    //FAIRE UNE AUTRE METHODE QUI SET MOINS DE CARACTERISTIQUES
     public void ajouterEmployes(Employes emp) {
         
         em.getTransaction().begin();
@@ -75,6 +76,7 @@ public class ConnexionPersistence {
         em.persist(e);
         em.getTransaction().commit();
     }
+    
     
     public void persist(Object object) {
         em.persist(object);
