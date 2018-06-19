@@ -15,8 +15,8 @@
         Bonjour admin ! <br /><br />
         
         Choisissez votre action : <br /><br />
-        <a href="tableauresultat.jsp">Voir la liste des employés</a><br />
-        <a href="ajouteremploye">Ajouter un employé</a>
+        <a href="tableauresultat.jsp" name="action">Voir la liste des employés </a><br />
+        <a href="ajouteremploye" name="action">Ajouter un employé</a>
         
     </body>
 </html>
