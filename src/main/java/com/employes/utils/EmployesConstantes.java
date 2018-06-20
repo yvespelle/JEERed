@@ -64,11 +64,11 @@ public final class EmployesConstantes {
     public static final String ERREUR_BDD_VIDE = "L'entreprise doit recruter !";
 
     //URL des pages jsp
-    public static final String PAGE_INDEX = "index.jsp";
-    public static final String PAGE_TOUS_LES_EMPLOYES = "tableauEmployes.jsp";
-    public static final String PAGE_DETAIL_EMPLOYE = "detailsEmploye.jsp";
-    public static final String PAGE_CHOIX = "choix.jsp";
-    public static final String PAGE_AJOUTER_UN_EMPLOYE = "ajouterUnEmploye.jsp";
-    public static final String PAGE_AJOUTER_5_EMPLOYES = "ajouter5Employes.jsp";
+    public static final String PAGE_INDEX = "WEB-INF/View/index.jsp";
+    public static final String PAGE_TOUS_LES_EMPLOYES = "WEB-INF/View/tableauEmployes.jsp";
+    public static final String PAGE_DETAIL_EMPLOYE = "WEB-INF/View/detailsEmploye.jsp";
+    public static final String PAGE_CHOIX = "WEB-INF/View/choix.jsp";
+    public static final String PAGE_AJOUTER_UN_EMPLOYE = "WEB-INF/View/ajouterUnEmploye.jsp";
+    public static final String PAGE_AJOUTER_5_EMPLOYES = "WEB-INF/View/ajouter5Employes.jsp";
 
 }
