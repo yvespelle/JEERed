@@ -5,11 +5,7 @@
  */
 package com.controleur;
 
-import com.employes.utils.EmployesConstantes;
-import static com.employes.utils.EmployesConstantes.REQUEST_DELETE_EMPLOYES;
-import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_EMPLOYES_ID;
-import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_IDENTIFIANTS;
-import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_TOUS_EMPLOYES;
+import static com.employes.utils.EmployesConstantes.*;
 import com.model.Employes;
 import java.util.Collection;
 import javax.ejb.Stateless;
@@ -34,8 +30,7 @@ public class ConnexionPersistence {
     }
     
     public Collection getEmployesId(int idEmp) {
-        Query q = em.createQuery(REQUEST_SELECT_EMPLOYES_ID+":idEmp");
-        //laisser :idEmp
+        Query q = em.createQuery(REQUEST_SELECT_EMPLOYES_ID+"idEmp");
         q.setParameter("idEmp", idEmp);
         return q.getResultList();
     }
@@ -60,8 +55,7 @@ public class ConnexionPersistence {
     }
     
     public int supprimerEmployes(int idEmp) {
-        Query q = em.createQuery(REQUEST_DELETE_EMPLOYES+":idEmp");
-        //laisser :idEmp
+        Query q = em.createQuery(REQUEST_DELETE_EMPLOYES+"idEmp");
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
     }
