@@ -115,30 +115,40 @@ public class Controleur extends HttpServlet {
                     employe = new Employes();
                     employe.setNom(request.getParameter("frmNom1"));
                     employe.setPrenom(request.getParameter("frmPrenom1"));
-                    employe.setTeldom(request.getParameter("frmAdresse1"));
-                    connexionPersistence.ajouter5Employes(employe);
+                    employe.setEmail(request.getParameter("frmEmail1"));
+                    if (!request.getParameter("frmNom1").equals("")|| !request.getParameter("frmPrenom1").equals("")) {
+                        connexionPersistence.ajouter5Employes(employe);
+                    }
 
                     employe = new Employes();
                     employe.setNom(request.getParameter("frmNom2"));
                     employe.setPrenom(request.getParameter("frmPrenom2"));
-                    employe.setTeldom(request.getParameter("frmAdresse2"));
-                    connexionPersistence.ajouter5Employes(employe);
-
+                    employe.setEmail(request.getParameter("frmEmail2"));
+                    if (!request.getParameter("frmNom2").equals("") || !request.getParameter("frmPrenom2").equals("")) {
+                        connexionPersistence.ajouter5Employes(employe);
+                    }
                     employe = new Employes();
                     employe.setNom(request.getParameter("frmNom3"));
                     employe.setPrenom(request.getParameter("frmPrenom3"));
-                    employe.setTeldom(request.getParameter("frmAdresse3"));
-                    connexionPersistence.ajouter5Employes(employe);
+                    employe.setEmail(request.getParameter("frmEmail3"));
+                    if (!request.getParameter("frmNom3").equals("") || !request.getParameter("frmPrenom3").equals("")) {
+                        connexionPersistence.ajouter5Employes(employe);
+                    }
+
                     employe = new Employes();
                     employe.setNom(request.getParameter("frmNom4"));
                     employe.setPrenom(request.getParameter("frmPrenom4"));
-                    employe.setTeldom(request.getParameter("frmAdresse4"));
-                    connexionPersistence.ajouter5Employes(employe);
+                    employe.setEmail(request.getParameter("frmEmail4"));
+                    if (!request.getParameter("frmNom4").equals("") || !request.getParameter("frmPrenom4").equals("")) {
+                        connexionPersistence.ajouter5Employes(employe);
+                    }
                     employe = new Employes();
                     employe.setNom(request.getParameter("frmNom5"));
                     employe.setPrenom(request.getParameter("frmPrenom5"));
-                    employe.setTeldom(request.getParameter("frmAdresse5"));
-                    connexionPersistence.ajouter5Employes(employe);
+                    employe.setEmail(request.getParameter("frmEmail5"));
+                    if (!request.getParameter("frmNom5").equals("") || !request.getParameter("frmPrenom5").equals("")) {
+                        connexionPersistence.ajouter5Employes(employe);
+                    }
 
                     listeEmployes.clear();
                     listeEmployes.addAll(connexionPersistence.getEmployes());
@@ -202,9 +212,6 @@ public class Controleur extends HttpServlet {
         employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE));
         return employe;
     }
-
-    
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

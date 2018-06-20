@@ -76,6 +76,7 @@ public class ConnexionPersistence {
     public void ajouter5Employes(Employes employe) {
         Query q = em.createNativeQuery(EmployesConstantes.REQUEST_AJOUTER_5_EMPLOYES);
         this.persist(employe);
+
     }
 
     public void persist(Object object) {
