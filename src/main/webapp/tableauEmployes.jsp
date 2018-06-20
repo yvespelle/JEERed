@@ -74,10 +74,12 @@
                         </br><p><font color="${cleCouleur}"> ${cleMessageSuppr} </font></p>
 
                     </c:if> 
-                        
+
+                    <button type="submit" name="action" value="VoirAjouter">Ajouter</button>
+
                     <!--bouton conditionnel supprimer-->
                     <c:if test="${empty cleListeEmployes}">
-                        <input type="submit" value="créer 5 employes" name="bouton" class="btn btn-primary">
+                        <button type="submit" name="bouton" value="VoirAjouter5">Ajouter 5 employes</button>
                         </br> <h2><font color="red"> /!\ <font color="orange">L'entreprise a besoin de recruter /!\</font></h2>
                         </c:if>
 

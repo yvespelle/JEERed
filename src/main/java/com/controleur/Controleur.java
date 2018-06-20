@@ -76,9 +76,12 @@ public class Controleur extends HttpServlet {
                             }
                         }
                     }
+                    break;
 
                 case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
+                    break;
+
                 case EmployesConstantes.ACTION_AJOUTER:
 
                     employe = creerEmploye(request);
@@ -87,6 +90,7 @@ public class Controleur extends HttpServlet {
                     listeEmployes.addAll(connexionPersistence.getEmployes());
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+                    break;
 
                 case EmployesConstantes.ACTION_SUPPRIMER:
                     if (request.getParameter(idEmploye) != null) {
@@ -105,6 +109,8 @@ public class Controleur extends HttpServlet {
                         request.setAttribute("cleListeEmployes", listeEmployes);
                         request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     }
+                    break;
+
                 case EmployesConstantes.ACTION_AJOUTER_5:
                     ArrayList<Employes> listeNouvEmployes;
                     listeNouvEmployes = creerPlusieursEmploye(request, 5);
@@ -116,6 +122,7 @@ public class Controleur extends HttpServlet {
                     listeEmployes.addAll(connexionPersistence.getEmployes());
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+                    break;
 
                 case EmployesConstantes.ACTION_MODIFIER:
 
@@ -129,6 +136,7 @@ public class Controleur extends HttpServlet {
                     System.out.println(listeEmployes.get(0).getAdresse());
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+                    break;
 
                 case EmployesConstantes.ACTION_DETAILS:
                     if (request.getParameter(idEmploye) != null) {
@@ -140,13 +148,18 @@ public class Controleur extends HttpServlet {
                         request.getRequestDispatcher(EmployesConstantes.PAGE_DETAIL_EMPLOYE).forward(request, response);
 
                     }
+                    break;
+
                 case EmployesConstantes.ACTION_VOIR_AJOUTER_5:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_5_EMPLOYES).forward(request, response);
+                    break;
+
                 case EmployesConstantes.ACTION_VOIR_LISTE:
                     listeEmployes.clear();
                     listeEmployes.addAll(connexionPersistence.getEmployes());
                     request.setAttribute("cleListeEmployes", listeEmployes);
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+                    break;
 
             }
 
@@ -167,7 +180,7 @@ public class Controleur extends HttpServlet {
         employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE));
         return employe;
     }
-    
+
     //METHODE UTILISEE POUR L'AJOUT DE PLUSIEURS EMPLOYES
     private ArrayList creerPlusieursEmploye(HttpServletRequest request, int nb) {
         ArrayList<Employes> listeNouvEmployes = new ArrayList<>();
