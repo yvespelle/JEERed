@@ -30,6 +30,7 @@ public class ConnexionPersistence {
     
     public Collection getEmployesId(int idEmp) {
         Query q = em.createQuery("SELECT e from Employes e where e.id=:idEmp");
+        //laisser :idEmp
         q.setParameter("idEmp", idEmp);
         return q.getResultList();
     }
@@ -55,6 +56,7 @@ public class ConnexionPersistence {
     
     public int supprimerEmployes(int idEmp) {
         Query q = em.createQuery("DELETE from Employes e where e.id=:idEmp");
+        //laisser :idEmp
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
     }

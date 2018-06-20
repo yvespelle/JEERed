@@ -2,11 +2,11 @@ package com.employes.utils;
 
 public final class EmployesConstantes {
 
-    //Requêtes SQL
-    public static final String SQL_DELETE_EMPLOYES = "DELETE FROM EMPLOYES WHERE ID=";
-    public static final String SQL_SELECT_EMPLOYES_ID = "SELECT * FROM EMPLOYES WHERE ID=";
-    public static final String SQL_SELECT_TOUS_EMPLOYES = "SELECT * FROM EMPLOYES";
-    public static final String SQL_SELECT_IDENTIFIANTS = "SELECT * from IDENTIFIANTS";
+    //Requêtes 
+    public static final String REQUEST_DELETE_EMPLOYES = "DELETE from Employes e where e.id=";
+    public static final String REQUEST_SELECT_EMPLOYES_ID = "SELECT e from Employes e where e.id=";
+    public static final String REQUEST_SELECT_TOUS_EMPLOYES = "SELECT e from Employes e";
+    public static final String REQUEST_SELECT_IDENTIFIANTS = "SELECT i from Identifiants i";  
 
     //Constantes lié aux actions / submit
     public static final String ACTION = "action";
