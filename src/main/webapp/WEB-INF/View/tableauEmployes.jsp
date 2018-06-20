@@ -62,7 +62,7 @@
                     <button type="submit" name="action" value="VoirAjouter">Ajouter</button>
                     <!--bouton conditionnel supprimer-->
                     <c:if test="${empty cleListeEmployes}">
-                        <button type="submit" name="bouton" value="VoirAjouter5">Ajouter 5 employés</button>
+                        <button type="submit" name="action" value="VoirAjouter5">Ajouter 5 employés</button>
                         </br> <h2><font color="red"> /!\ <font color="orange">L'entreprise a besoin de recruter /!\</font></h2>
                         </c:if>
                 </form>

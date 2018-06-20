@@ -112,12 +112,34 @@ public class Controleur extends HttpServlet {
                     break;
 
                 case EmployesConstantes.ACTION_AJOUTER_5:
-                    ArrayList<Employes> listeNouvEmployes;
-                    listeNouvEmployes = creerPlusieursEmploye(request, 5);
+                    employe = new Employes();
+                    employe.setNom(request.getParameter("frmNom1"));
+                    employe.setPrenom(request.getParameter("frmPrenom1"));
+                    employe.setTeldom(request.getParameter("frmAdresse1"));
+                    connexionPersistence.ajouter5Employes(employe);
 
-                    for (Employes e : listeNouvEmployes) {
-                        connexionPersistence.ajouterEmployes(e);
-                    }
+                    employe = new Employes();
+                    employe.setNom(request.getParameter("frmNom2"));
+                    employe.setPrenom(request.getParameter("frmPrenom2"));
+                    employe.setTeldom(request.getParameter("frmAdresse2"));
+                    connexionPersistence.ajouter5Employes(employe);
+
+                    employe = new Employes();
+                    employe.setNom(request.getParameter("frmNom3"));
+                    employe.setPrenom(request.getParameter("frmPrenom3"));
+                    employe.setTeldom(request.getParameter("frmAdresse3"));
+                    connexionPersistence.ajouter5Employes(employe);
+                    employe = new Employes();
+                    employe.setNom(request.getParameter("frmNom4"));
+                    employe.setPrenom(request.getParameter("frmPrenom4"));
+                    employe.setTeldom(request.getParameter("frmAdresse4"));
+                    connexionPersistence.ajouter5Employes(employe);
+                    employe = new Employes();
+                    employe.setNom(request.getParameter("frmNom5"));
+                    employe.setPrenom(request.getParameter("frmPrenom5"));
+                    employe.setTeldom(request.getParameter("frmAdresse5"));
+                    connexionPersistence.ajouter5Employes(employe);
+
                     listeEmployes.clear();
                     listeEmployes.addAll(connexionPersistence.getEmployes());
                     request.setAttribute("cleListeEmployes", listeEmployes);
@@ -181,23 +203,8 @@ public class Controleur extends HttpServlet {
         return employe;
     }
 
-    //METHODE UTILISEE POUR L'AJOUT DE PLUSIEURS EMPLOYES
-    private ArrayList creerPlusieursEmploye(HttpServletRequest request, int nb) {
-        ArrayList<Employes> listeNouvEmployes = new ArrayList<>();
-        for (int i = 1; i <= nb; i++) {
-            employe.setAdresse(request.getParameter(EmployesConstantes.CHAMP_ADRESSE + "i"));
-            employe.setCodepostal(request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL + "i"));
-            employe.setEmail(request.getParameter(EmployesConstantes.CHAMP_EMAIL + "i"));
-            employe.setNom(request.getParameter(EmployesConstantes.CHAMP_NOM + "i"));
-            employe.setPrenom(request.getParameter(EmployesConstantes.CHAMP_PRENOM + "i"));
-            employe.setTeldom(request.getParameter(EmployesConstantes.CHAMP_TELDOMICILE + "i"));
-            employe.setTelport(request.getParameter(EmployesConstantes.CHAMP_TELPORTABLE + "i"));
-            employe.setTelpro(request.getParameter(EmployesConstantes.CHAMP_TELPRO + "i"));
-            employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE + "i"));
-            listeNouvEmployes.add(employe);
-        }
-        return listeNouvEmployes;
-    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

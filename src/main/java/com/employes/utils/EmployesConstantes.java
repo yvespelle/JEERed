@@ -7,6 +7,7 @@ public final class EmployesConstantes {
     public static final String REQUEST_SELECT_EMPLOYES_ID = "SELECT e from Employes e where e.id=:";
     public static final String REQUEST_SELECT_TOUS_EMPLOYES = "SELECT e from Employes e";
     public static final String REQUEST_SELECT_IDENTIFIANTS = "SELECT i from Identifiants i";  
+    public static final String REQUEST_AJOUTER_5_EMPLOYES = "INSERT INTO UTILISATEUR(LOGIN, PASSWORD) VALUES (?,?)";  
 
     //Constantes lié aux actions / submit
     public static final String ACTION = "action";

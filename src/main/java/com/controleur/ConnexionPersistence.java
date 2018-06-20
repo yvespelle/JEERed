@@ -1,7 +1,9 @@
 package com.controleur;
 
+import com.employes.utils.EmployesConstantes;
 import static com.employes.utils.EmployesConstantes.*;
 import com.model.Employes;
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -46,7 +48,7 @@ public class ConnexionPersistence {
         emp.setCodepostal(e.getCodepostal());
         emp.setVille(e.getVille());
         emp.setEmail(e.getEmail());
-        em.persist(emp);
+        this.persist(emp);
     }
 
     public int supprimerEmployes(int idEmp) {
@@ -68,7 +70,12 @@ public class ConnexionPersistence {
         e.setTelport(emp.getTelport());
         e.setTelpro(emp.getTelpro());
         e.setVille(emp.getVille());
-        em.persist(e);
+        this.persist(e);
+    }
+
+    public void ajouter5Employes(Employes employe) {
+        Query q = em.createNativeQuery(EmployesConstantes.REQUEST_AJOUTER_5_EMPLOYES);
+        this.persist(employe);
     }
 
     public void persist(Object object) {
