@@ -63,7 +63,7 @@ public final class EmployesConstantes {
     public static final String ERREUR_SUPPR = "La suppression a échoué !";
     public static final String SUCCES_SUPPR = "La suppression a réussi !";
     public static final String ERREUR_BDD_VIDE = "L'entreprise doit recruter !";
-   // public static final String ERREUR_AUCUNE_LIGNE_SELECT = "Vous n'avez sélectionné aucun employé!";
+   // public static final String ERREUR_AUCUNE_LIGNE_SELECT = "Vous n'avez sélectionné aucun employé!"; 
 
     //URL des pages jsp
     public static final String PAGE_INDEX = "index.jsp";
