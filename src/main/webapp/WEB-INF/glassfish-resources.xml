@@ -75,4 +75,6 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="java:app/infoConn" object-type="user" pool-name="mysql_basetprouge_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/BaseAmazon" object-type="user" pool-name="mysql_employesdbaws_yvespellePool_1"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/test" object-type="user" pool-name="mysql_bddtp_rootPool"/>
 </resources>

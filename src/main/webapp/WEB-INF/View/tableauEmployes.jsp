@@ -57,13 +57,13 @@
                         <input type="submit" name="action" value="Details" class="btn btn-primary"/>
                         <!--bouton supprimer avec message conditionnel--> 
                         <input type="submit" name="action" value="Supprimer" class="btn btn-primary"/>
-                        </br><p><font color="${cleCouleur}"> ${cleMessageSuppr} </font></p>
+                        <p><font color="${cleCouleur}"> ${cleMessageSuppr} </font></p>
                     </c:if> 
-                    <button type="submit" name="action" value="VoirAjouter">Ajouter</button>
+                    <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter</button>
                     <!--bouton conditionnel supprimer-->
                     <c:if test="${empty cleListeEmployes}">
-                        <button type="submit" name="action" value="VoirAjouter5">Ajouter 5 employés</button>
-                        </br> <h2><font color="red"> /!\ <font color="orange">L'entreprise a besoin de recruter /!\</font></h2>
+                        <button type="submit" name="action" value="VoirAjouter5" class="btn btn-default">Ajouter 5 employés</button>
+                        <br /> <h2><font color="red"> /!\ <font color="red">L'entreprise a besoin de recruter /!\</font></h2>
                         </c:if>
                 </form>
             </div>
