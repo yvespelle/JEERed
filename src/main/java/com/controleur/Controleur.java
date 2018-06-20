@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.controleur;
 
 import com.employes.utils.EmployesConstantes;
@@ -19,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Jacques
+ * @author Groupe Rouge
  */
 public class Controleur extends HttpServlet {
 

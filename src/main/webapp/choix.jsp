@@ -1,7 +1,7 @@
 <%-- 
     Document   : choix
     Created on : 19 juin 2018, 14:13:52
-    Author     : esic
+    Author     : Groupe Rouge
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,7 +1,7 @@
 <%-- 
     Document   : detailsEmploye
-    Created on : 3 nov. 2016, 11:13:04
-    Author     : Jacques Augustin
+    Created on : 19 juin 2018, 14:13:54
+    Author     : Groupe Rouge
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

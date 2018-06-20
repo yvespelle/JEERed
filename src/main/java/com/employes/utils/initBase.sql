@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 /**
- * Author:  Jacques Augustin
- * Created: 3 nov. 2016
+ * Author:  Groupe Rouge
+ * Created:  19 juin 2018
  */
 
 DROP TABLE IDENTIFIANTS;
