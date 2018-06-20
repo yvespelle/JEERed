@@ -5,6 +5,11 @@
  */
 package com.controleur;
 
+import com.employes.utils.EmployesConstantes;
+import static com.employes.utils.EmployesConstantes.REQUEST_DELETE_EMPLOYES;
+import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_EMPLOYES_ID;
+import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_IDENTIFIANTS;
+import static com.employes.utils.EmployesConstantes.REQUEST_SELECT_TOUS_EMPLOYES;
 import com.model.Employes;
 import java.util.Collection;
 import javax.ejb.Stateless;
@@ -24,19 +29,19 @@ public class ConnexionPersistence {
 
     //MODIFIER EMPLOYES (PREPARED STATEMENT) Objet Employes
     public Collection getEmployes() {
-        Query q = em.createQuery("SELECT e from Employes e");
+        Query q = em.createQuery(REQUEST_SELECT_TOUS_EMPLOYES);
         return q.getResultList();
     }
     
     public Collection getEmployesId(int idEmp) {
-        Query q = em.createQuery("SELECT e from Employes e where e.id=:idEmp");
+        Query q = em.createQuery(REQUEST_SELECT_EMPLOYES_ID+":idEmp");
         //laisser :idEmp
         q.setParameter("idEmp", idEmp);
         return q.getResultList();
     }
     
     public Collection getIdentifiants() {
-        Query q = em.createQuery("SELECT i from Identifiants i");
+        Query q = em.createQuery(REQUEST_SELECT_IDENTIFIANTS);
         return q.getResultList();
     }
     
@@ -55,7 +60,7 @@ public class ConnexionPersistence {
     }
     
     public int supprimerEmployes(int idEmp) {
-        Query q = em.createQuery("DELETE from Employes e where e.id=:idEmp");
+        Query q = em.createQuery(REQUEST_DELETE_EMPLOYES+":idEmp");
         //laisser :idEmp
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
