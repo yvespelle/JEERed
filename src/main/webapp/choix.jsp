@@ -13,7 +13,7 @@
     </head>
     <body> 
         <form action="Controleur" method="post">
-            Bonjour $(identifiants.login) ! <br /><br />
+            Bonjour ${identifiants.login} ! <br /><br />
             Choisissez votre action : <br /><br />
 
 

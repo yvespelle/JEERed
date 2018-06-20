@@ -29,6 +29,7 @@ public class Controleur extends HttpServlet {
     ArrayList<Employes> listeEmployes = new ArrayList<>();
     ArrayList<Identifiants> listeIdentifiants = new ArrayList<>();
     Employes employe = new Employes();
+    Identifiants identifiants = new Identifiants();
     String idEmploye = EmployesConstantes.FRM_ID_EMPL_SELECT;
 
     /**
@@ -69,15 +70,10 @@ public class Controleur extends HttpServlet {
                             for (Identifiants i : listeIdentifiants) {
 
                                 if (i.getLogin().equals(loginForm) && i.getMdp().equals(mdpForm)) {
-
+                                    identifiants.setLogin(request.getParameter(EmployesConstantes.FRM_LOGIN));
+                                    session.setAttribute("identifiants", identifiants);
                                     request.getRequestDispatcher(EmployesConstantes.PAGE_CHOIX).forward(request, response);
-                                    //A DEPLACER DANS L'OPTION CHOIX
-//                                    listeEmployes.clear();
-//                                    listeEmployes.addAll(connexionPersistence.getEmployes());
-//
-//                                    request.setAttribute("cleListeEmployes", listeEmployes);
-//                                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
-                                    //A DEPLACER
+
                                 } else {
 
                                     request.setAttribute("cleMessageErreur", EmployesConstantes.ERREUR_INFOS_CONN_KO);
@@ -86,7 +82,7 @@ public class Controleur extends HttpServlet {
                             }
                         }
                     }
-  
+
                 case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
                 case EmployesConstantes.ACTION_AJOUTER:
@@ -100,14 +96,14 @@ public class Controleur extends HttpServlet {
 
                 case EmployesConstantes.ACTION_SUPPRIMER:
                     if (request.getParameter(idEmploye) != null) {
-                        int i=0;
+                        int i = 0;
                         int idClientASupprimer = Integer.parseInt(request.getParameter(idEmploye));
-                        i =connexionPersistence.supprimerEmployes(idClientASupprimer);
-                        if (i==0){
-                            request.setAttribute("cleMessageSuppr",EmployesConstantes.ERREUR_SUPPR);
+                        i = connexionPersistence.supprimerEmployes(idClientASupprimer);
+                        if (i == 0) {
+                            request.setAttribute("cleMessageSuppr", EmployesConstantes.ERREUR_SUPPR);
                             request.setAttribute("cleCouleur", "red");
-                        } else if (i>0){
-                            request.setAttribute("cleMessageSuppr",EmployesConstantes.SUCCES_SUPPR);
+                        } else if (i > 0) {
+                            request.setAttribute("cleMessageSuppr", EmployesConstantes.SUCCES_SUPPR);
                             request.setAttribute("cleCouleur", "green");
                         }
                         listeEmployes.clear();
@@ -116,8 +112,17 @@ public class Controleur extends HttpServlet {
                         request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     }
                 case EmployesConstantes.ACTION_AJOUTER_5:
-                    //
-                    //
+                    ArrayList<Employes> listeNouvEmployes;
+                    listeNouvEmployes = creerPlusieursEmploye(request, 5);
+
+                    for (Employes e : listeNouvEmployes) {
+                        connexionPersistence.ajouterEmployes(e);
+                    }
+                    listeEmployes.clear();
+                    listeEmployes.addAll(connexionPersistence.getEmployes());
+                    request.setAttribute("cleListeEmployes", listeEmployes);
+                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+
                 case EmployesConstantes.ACTION_MODIFIER:
 
                     employe = creerEmploye(request);
@@ -142,7 +147,8 @@ public class Controleur extends HttpServlet {
                         request.getRequestDispatcher(EmployesConstantes.PAGE_DETAIL_EMPLOYE).forward(request, response);
 
                     }
-
+                case EmployesConstantes.ACTION_VOIR_AJOUTER_5:
+                    request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_5_EMPLOYES).forward(request, response);
                 case EmployesConstantes.ACTION_VOIR_LISTE:
                     listeEmployes.clear();
                     listeEmployes.addAll(connexionPersistence.getEmployes());
@@ -168,6 +174,24 @@ public class Controleur extends HttpServlet {
         employe.setTelpro(request.getParameter(EmployesConstantes.CHAMP_TELPRO));
         employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE));
         return employe;
+    }
+//METHODE UTILISEE POUR L'AJOUT DE PLUSIEURS EMPLOYES
+
+    private ArrayList creerPlusieursEmploye(HttpServletRequest request, int nb) {
+        ArrayList<Employes> listeNouvEmployes = new ArrayList<>();
+        for (int i = 1; i <= nb; i++) {
+            employe.setAdresse(request.getParameter(EmployesConstantes.CHAMP_ADRESSE + "i"));
+            employe.setCodepostal(request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL + "i"));
+            employe.setEmail(request.getParameter(EmployesConstantes.CHAMP_EMAIL + "i"));
+            employe.setNom(request.getParameter(EmployesConstantes.CHAMP_NOM + "i"));
+            employe.setPrenom(request.getParameter(EmployesConstantes.CHAMP_PRENOM + "i"));
+            employe.setTeldom(request.getParameter(EmployesConstantes.CHAMP_TELDOMICILE + "i"));
+            employe.setTelport(request.getParameter(EmployesConstantes.CHAMP_TELPORTABLE + "i"));
+            employe.setTelpro(request.getParameter(EmployesConstantes.CHAMP_TELPRO + "i"));
+            employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE + "i"));
+            listeNouvEmployes.add(employe);
+        }
+        return listeNouvEmployes;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
