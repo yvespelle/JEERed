@@ -21,25 +21,29 @@
 
                 <form method="post" action="Controleur" name="suppression">
                     <table class="table table-striped custab">
+                        
+                        <!--permet de faire disparaitre entrée du tableau s'il n'y a plus d'employé-->
+                        <c:if test="${!empty cleListeEmployes}">
+                            <thead>
+                            <h1>Liste des employés</h1>
+                            <tr class="text-center">
+                                <th>Sél</th>
+                                <th>NOM</th>
+                                <th>PRENOM</th>
+                                <th>TEL DOMICILE</th>
+                                <th>TEL PORTABLE</th>
+                                <th>TEL PRO</th>
+                                <th>ADRESSE</th>
+                                <th>CODE POSTAL</th>
+                                <th>VILLE</th>
+                                <th>EMAIL</th>
+                            </tr>
+                            </thead>
 
-                        <thead>
-                        <h1>Liste des employés</h1>
-                        <tr class="text-center">
-                            <th>Sél</th>
-                            <th>NOM</th>
-                            <th>PRENOM</th>
-                            <th>TEL DOMICILE</th>
-                            <th>TEL PORTABLE</th>
-                            <th>TEL PRO</th>
-                            <th>ADRESSE</th>
-                            <th>CODE POSTAL</th>
-                            <th>VILLE</th>
-                            <th>EMAIL</th>
-                        </tr>
-                        </thead>
-
-                        </tr>
-
+                            </tr>
+                        </c:if>
+                            
+                            
                         <c:forEach items="${cleListeEmployes}" var="employe">
                             <tr>
                                 <td><input type="radio" name="idEmploye" value="${employe.id}" CHECKED></td>
@@ -60,21 +64,27 @@
 
 
                     </table>
+
+
+
+                    <input type="submit" name="action" value="Details" class="btn btn-primary"/>
+
+                    <!--bouton supprimer avec message conditionnel--> 
                     <input type="submit" name="action" value="Supprimer" class="btn btn-primary"/>
-                     <%--<c:if test="${!empty cleMessageSupprimer}">--%>
-                    <!--${EmployesConstantes.SUCCES_SUPPR}-->
-
-                <%--</c:if>--%>
+                    </br><p><font color="${cleCouleur}"> ${cleMessageSuppr} </font></p>
 
 
-                <input type="submit" name="action" value="Details" class="btn btn-primary"/>
-                <c:if test="${empty cleListeEmployes}">
-                    <input type="submit" value="créer 5 employes" name="bouton" class="btn btn-primary">
-                </c:if>
+                    <!--bouton conditionnel supprimer-->
+                    <c:if test="${empty cleListeEmployes}">
+                        <input type="submit" value="créer 5 employes" name="bouton" class="btn btn-primary">
+                        <h2><font color="red"> /!\ L'entreprise a besoin de recruter /!\</font></h2>
+                        </c:if>
 
 
-            </form>
-        </div>
-    </div>         
-</body>
+
+
+                </form>
+            </div>
+        </div>         
+    </body>
 </html>
