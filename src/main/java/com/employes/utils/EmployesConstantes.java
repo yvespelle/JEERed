@@ -3,8 +3,8 @@ package com.employes.utils;
 public final class EmployesConstantes {
 
     //Requêtes 
-    public static final String REQUEST_DELETE_EMPLOYES = "DELETE from Employes e where e.id=";
-    public static final String REQUEST_SELECT_EMPLOYES_ID = "SELECT e from Employes e where e.id=";
+    public static final String REQUEST_DELETE_EMPLOYES = "DELETE from Employes e where e.id=:";
+    public static final String REQUEST_SELECT_EMPLOYES_ID = "SELECT e from Employes e where e.id=:";
     public static final String REQUEST_SELECT_TOUS_EMPLOYES = "SELECT e from Employes e";
     public static final String REQUEST_SELECT_IDENTIFIANTS = "SELECT i from Identifiants i";  
 
@@ -74,5 +74,6 @@ public final class EmployesConstantes {
     public static final String PAGE_DETAIL_EMPLOYE = "detailsEmploye.jsp";
     public static final String PAGE_CHOIX = "choix.jsp";
     public static final String PAGE_AJOUTER_UN_EMPLOYE = "ajouterUnEmploye.jsp";
+    public static final String PAGE_AJOUTER_5_EMPLOYES = "ajouter5Employes.jsp";
 
 }
