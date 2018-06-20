@@ -16,8 +16,6 @@
         <title>Login - Gestion Employés</title>
     </head>
     <body>      
-
-
         <div class="container" style="margin-top:30px">
             <div class="col-md-4">
 
@@ -26,7 +24,6 @@
                         ${cleMessageErreur}
                     </c:if> 
                 </div>
-
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Login</h3>
@@ -40,11 +37,9 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Mot de passe" name="mdp" type="password">
                                 </div>
-
                                 <input type="submit" name="action" value="Login" class="btn btn-primary"/>
                             </fieldset>
-                        </form>
-                        
+                        </form>                        
                     </div>
                 </div>
             </div>

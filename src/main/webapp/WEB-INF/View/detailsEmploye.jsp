@@ -14,7 +14,6 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
     <body>
-
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
                 <form class="form-horizontal" action="Controleur" >
@@ -93,6 +92,5 @@
                 </form>
             </div>
         </div>
-    </div>
 </body>
 </html>
