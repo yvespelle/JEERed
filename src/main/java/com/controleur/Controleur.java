@@ -100,14 +100,24 @@ public class Controleur extends HttpServlet {
 
                 case EmployesConstantes.ACTION_SUPPRIMER:
                     if (request.getParameter(idEmploye) != null) {
+                        int i=0;
                         int idClientASupprimer = Integer.parseInt(request.getParameter(idEmploye));
-                        connexionPersistence.supprimerEmployes(idClientASupprimer);
+                        i =connexionPersistence.supprimerEmployes(idClientASupprimer);
+                        if (i==0){
+                            request.setAttribute("cleMessageSuppr",EmployesConstantes.ERREUR_SUPPR);
+                            request.setAttribute("cleCouleur", "red");
+                        } else if (i>0){
+                            request.setAttribute("cleMessageSuppr",EmployesConstantes.SUCCES_SUPPR);
+                            request.setAttribute("cleCouleur", "green");
+                        }
                         listeEmployes.clear();
                         listeEmployes.addAll(connexionPersistence.getEmployes());
                         request.setAttribute("cleListeEmployes", listeEmployes);
                         request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     }
-
+                case EmployesConstantes.ACTION_AJOUTER_5:
+                    //
+                    //
                 case EmployesConstantes.ACTION_MODIFIER:
 
                     employe = creerEmploye(request);
