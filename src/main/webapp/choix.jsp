@@ -11,11 +11,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
-        Bonjour admin ! <br /><br />
-        
+    <body> 
+        Bonjour $(login) ! <br /><br />
         Choisissez votre action : <br /><br />
-         <form action="Controleur" method="post">
+         
+        <form action="Controleur" method="post">
         <button type="submit" name="action" value="VoirListe">Voir la liste des employés</button>
         <button type="submit" name="action" value="VoirAjouter">Ajouter un employé</button>
          </form>

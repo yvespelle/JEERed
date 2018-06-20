@@ -35,6 +35,27 @@ public final class EmployesConstantes {
     public static final String CHAMP_TELPRO = "frmTelPro";
     public static final String CHAMP_VILLE = "frmVille";
     
+    public static final String CHAMP_EMAIL_1 = "frmEmail1";
+    public static final String CHAMP_NOM_1 = "frmNom1";
+    public static final String CHAMP_PRENOM_1 = "frmPrenom1";
+    
+    public static final String CHAMP_EMAIL_2 = "frmEmail2";
+    public static final String CHAMP_NOM_2 = "frmNom2";
+    public static final String CHAMP_PRENOM_2 = "frmPrenom2";
+    
+    public static final String CHAMP_EMAIL_3 = "frmEmail3";
+    public static final String CHAMP_NOM_3 = "frmNom3";
+    public static final String CHAMP_PRENOM_3 = "frmPrenom3";
+    
+    public static final String CHAMP_EMAIL_4 = "frmEmail4";
+    public static final String CHAMP_NOM_4 = "frmNom4";
+    public static final String CHAMP_PRENOM_4 = "frmPrenom4";
+    
+    public static final String CHAMP_EMAIL_5 = "frmEmail5";
+    public static final String CHAMP_NOM_5 = "frmNom5";
+    public static final String CHAMP_PRENOM_5 = "frmPrenom5";
+    
+    
 
     //Messages d'erreur
     public static final String ERREUR_SAISIE_VIDE = "Vous devez renseigner les deux champs";
