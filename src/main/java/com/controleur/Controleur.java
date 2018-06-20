@@ -57,8 +57,7 @@ public class Controleur extends HttpServlet {
             switch (action) {
 
                 case EmployesConstantes.ACTION_LOGIN:
-                    //Si le nom d'utilisateur et le mot de passe sont vide, renvoyer vers l'index
-                    //avec un message d'erreur.
+                    //Si le nom d'utilisateur et le mot de passe sont vide, renvoyer vers l'index avec un message d'erreur.
                     if (loginForm != null && mdpForm != null) {
 
                         if (loginForm.isEmpty() || mdpForm.isEmpty()) {
@@ -143,7 +142,6 @@ public class Controleur extends HttpServlet {
                         listeEmployes.addAll(connexionPersistence.getEmployesId(idEmployeSelect));
                         employe = listeEmployes.get(0);
                         session.setAttribute("employe", employe);
-                        //  request.setAttribute("idEmploye", idEmployeSelect);
                         request.getRequestDispatcher(EmployesConstantes.PAGE_DETAIL_EMPLOYE).forward(request, response);
 
                     }
@@ -163,7 +161,6 @@ public class Controleur extends HttpServlet {
 
     //REGROUPE DU CODE REPETE : PRENDS LA REQUETE CONTENANT LES INFOS D'UN FORMULAIRE ET CREE UN OBJET EMPLOYES 
     private Employes creerEmploye(HttpServletRequest request) {
-
         employe.setAdresse(request.getParameter(EmployesConstantes.CHAMP_ADRESSE));
         employe.setCodepostal(request.getParameter(EmployesConstantes.CHAMP_CODEPOSTAL));
         employe.setEmail(request.getParameter(EmployesConstantes.CHAMP_EMAIL));
@@ -175,8 +172,8 @@ public class Controleur extends HttpServlet {
         employe.setVille(request.getParameter(EmployesConstantes.CHAMP_VILLE));
         return employe;
     }
-//METHODE UTILISEE POUR L'AJOUT DE PLUSIEURS EMPLOYES
-
+    
+    //METHODE UTILISEE POUR L'AJOUT DE PLUSIEURS EMPLOYES
     private ArrayList creerPlusieursEmploye(HttpServletRequest request, int nb) {
         ArrayList<Employes> listeNouvEmployes = new ArrayList<>();
         for (int i = 1; i <= nb; i++) {

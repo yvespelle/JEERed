@@ -19,7 +19,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class ConnexionPersistence {
-    
+
     @PersistenceContext(unitName = "EmployesServletJPAPU")
     private EntityManager em;
 
@@ -28,18 +28,18 @@ public class ConnexionPersistence {
         Query q = em.createQuery(REQUEST_SELECT_TOUS_EMPLOYES);
         return q.getResultList();
     }
-    
+
     public Collection getEmployesId(int idEmp) {
-        Query q = em.createQuery(REQUEST_SELECT_EMPLOYES_ID+"idEmp");
+        Query q = em.createQuery(REQUEST_SELECT_EMPLOYES_ID + "idEmp");
         q.setParameter("idEmp", idEmp);
         return q.getResultList();
     }
-    
+
     public Collection getIdentifiants() {
         Query q = em.createQuery(REQUEST_SELECT_IDENTIFIANTS);
         return q.getResultList();
     }
-    
+
     public void modifierEmployes(Employes e) {
         Employes emp = (Employes) em.find(Employes.class, e.getId());
         emp.setNom(e.getNom());
@@ -51,19 +51,18 @@ public class ConnexionPersistence {
         emp.setCodepostal(e.getCodepostal());
         emp.setVille(e.getVille());
         emp.setEmail(e.getEmail());
-        em.persist(emp);  
+        em.persist(emp);
     }
-    
+
     public int supprimerEmployes(int idEmp) {
-        Query q = em.createQuery(REQUEST_DELETE_EMPLOYES+"idEmp");
+        Query q = em.createQuery(REQUEST_DELETE_EMPLOYES + "idEmp");
         q.setParameter("idEmp", idEmp);
         return q.executeUpdate();
     }
+
     //SI NE MARCHE PAS AVEC DES VALEURS NULLES POUR LES CHAMPS NON UTILISES, 
     //FAIRE UNE AUTRE METHODE QUI SET MOINS DE CARACTERISTIQUES
     public void ajouterEmployes(Employes emp) {
-        
-//        em.getTransaction().begin();
         Employes e = new Employes();
         e.setAdresse(emp.getAdresse());
         e.setCodepostal(emp.getCodepostal());
@@ -75,12 +74,10 @@ public class ConnexionPersistence {
         e.setTelpro(emp.getTelpro());
         e.setVille(emp.getVille());
         em.persist(e);
-//        em.getTransaction().commit();
     }
-    
-    
+
     public void persist(Object object) {
         em.persist(object);
     }
-    
+
 }

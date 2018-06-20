@@ -55,8 +55,6 @@ public final class EmployesConstantes {
     public static final String CHAMP_EMAIL_5 = "frmEmail5";
     public static final String CHAMP_NOM_5 = "frmNom5";
     public static final String CHAMP_PRENOM_5 = "frmPrenom5";
-    
-    
 
     //Messages d'erreur
     public static final String ERREUR_SAISIE_VIDE = "Vous devez renseigner les deux champs";
@@ -64,12 +62,9 @@ public final class EmployesConstantes {
     public static final String ERREUR_SUPPR = "La suppression a échoué !";
     public static final String SUCCES_SUPPR = "La suppression a réussi !";
     public static final String ERREUR_BDD_VIDE = "L'entreprise doit recruter !";
-   // public static final String ERREUR_AUCUNE_LIGNE_SELECT = "Vous n'avez sélectionné aucun employé!";
 
     //URL des pages jsp
     public static final String PAGE_INDEX = "index.jsp";
-//    public static final String PAGE_CONTROLEUR = "controleur.jsp";
-//    public static final String PAGE_CONTROLEUR_TABLEAU = "controleurTableauEmployes.jsp";
     public static final String PAGE_TOUS_LES_EMPLOYES = "tableauEmployes.jsp";
     public static final String PAGE_DETAIL_EMPLOYE = "detailsEmploye.jsp";
     public static final String PAGE_CHOIX = "choix.jsp";
