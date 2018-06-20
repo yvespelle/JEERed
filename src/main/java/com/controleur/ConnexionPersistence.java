@@ -51,7 +51,7 @@ public class ConnexionPersistence {
         emp.setCodepostal(e.getCodepostal());
         emp.setVille(e.getVille());
         emp.setEmail(e.getEmail());
-        em.persist(emp);        
+        em.persist(emp);  
     }
     
     public int supprimerEmployes(int idEmp) {
