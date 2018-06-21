@@ -116,7 +116,7 @@ public class Controleur extends HttpServlet {
                     employe.setNom(request.getParameter("frmNom1"));
                     employe.setPrenom(request.getParameter("frmPrenom1"));
                     employe.setEmail(request.getParameter("frmEmail1"));
-                    if (!request.getParameter("frmNom1").equals("")|| !request.getParameter("frmPrenom1").equals("")) {
+                    if (!request.getParameter("frmNom1").equals("") || !request.getParameter("frmPrenom1").equals("")) {
                         connexionPersistence.ajouter5Employes(employe);
                     }
 
