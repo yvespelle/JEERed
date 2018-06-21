@@ -84,6 +84,8 @@
                                 <div class="pull-right">
                                     <button type="submit" name="action" value="Modifier" class="btn btn-primary">Modifier</button>
                                     <button type="submit" name="action" value="VoirListe" class="btn btn-default" >Voir liste</button>
+                                    <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
+
                                 </div>
                             </div>
                         </div>
@@ -92,5 +94,5 @@
                 </form>
             </div>
         </div>
-</body>
+    </body>
 </html>

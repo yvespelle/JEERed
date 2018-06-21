@@ -13,15 +13,17 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
-        <title>JSP Page</title>
-    </head>
-    <body> 
-        <form action="Controleur" method="post">
-            Bonjour ${identifiants.login} ! <br /><br />
-            Choisissez votre action : <br /><br />
+    <title>JSP Page</title>
+</head>
+<body> 
+    <form action="Controleur" method="post">
+        Bonjour ${identifiants.login} ! <br /><br />
+        Choisissez votre action : <br /><br />
 
-            <button type="submit" name="action" value="VoirListe" class="btn btn-primary">Voir la liste des employés</button>
-            <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter un employé</button>
-        </form>
-    </body>
+        <button type="submit" name="action" value="VoirListe" class="btn btn-primary">Voir la liste des employés</button>
+        <button type="submit" name="action" value="VoirAjouter" class="btn btn-primary">Ajouter un employé</button>
+        <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
+
+    </form>
+</body>
 </html>

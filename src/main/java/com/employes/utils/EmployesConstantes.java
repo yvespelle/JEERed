@@ -20,6 +20,8 @@ public final class EmployesConstantes {
     public static final String ACTION_VOIR_AJOUTER = "VoirAjouter";
     public static final String ACTION_VOIR_AJOUTER_5 = "VoirAjouter5";
     public static final String ACTION_LOGIN = "Login";
+    public static final String ACTION_QUITTER = "Quitter";
+    public static final String ACTION_ANNULER = "Annuler";
 
     //Constantes représentant les input de type text ou radio
     public static final String FRM_LOGIN = "login";

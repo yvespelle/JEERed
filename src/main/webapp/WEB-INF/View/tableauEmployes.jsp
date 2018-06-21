@@ -67,6 +67,7 @@
                         <button type="submit" name="action" value="VoirAjouter5" class="btn btn-default">Ajouter 5 employés</button>
                         <br /> <h2><font color="red"> /!\ L'entreprise a besoin de recruter /!\</font></h2>
                         </c:if>
+                        <button type="submit" name="action" value="Quitter" class="btn btn-warning">Quitter</button>
                 </form>
             </div>
         </div>         

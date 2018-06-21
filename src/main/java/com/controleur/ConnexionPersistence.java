@@ -70,7 +70,9 @@ public class ConnexionPersistence {
         e.setTelport(emp.getTelport());
         e.setTelpro(emp.getTelpro());
         e.setVille(emp.getVille());
-        this.persist(e);
+        if (!emp.getNom().equals("")) {
+            this.persist(e);
+        }
     }
 
     public void ajouter5Employes(Employes employe) {

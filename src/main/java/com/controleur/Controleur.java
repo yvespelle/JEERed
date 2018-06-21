@@ -76,12 +76,8 @@ public class Controleur extends HttpServlet {
                         }
                     }
                     break;
-            
-       
 
-    
-
-case EmployesConstantes.ACTION_VOIR_AJOUTER:
+                case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
                     break;
 
@@ -196,6 +192,16 @@ case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
                     break;
 
+                case EmployesConstantes.ACTION_QUITTER:
+                    request.getRequestDispatcher(EmployesConstantes.PAGE_INDEX).forward(request, response);
+                    break;
+
+                case EmployesConstantes.ACTION_ANNULER:
+                    listeEmployes.clear();
+                    listeEmployes.addAll(connexionPersistence.getEmployes());
+                    request.setAttribute("cleListeEmployes", listeEmployes);
+                    request.getRequestDispatcher(EmployesConstantes.PAGE_TOUS_LES_EMPLOYES).forward(request, response);
+                    break;
             }
 
         }
@@ -226,7 +232,7 @@ case EmployesConstantes.ACTION_VOIR_AJOUTER:
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -240,7 +246,7 @@ case EmployesConstantes.ACTION_VOIR_AJOUTER:
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -251,7 +257,7 @@ case EmployesConstantes.ACTION_VOIR_AJOUTER:
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
