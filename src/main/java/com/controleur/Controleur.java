@@ -68,17 +68,20 @@ public class Controleur extends HttpServlet {
                                     session.setAttribute("identifiants", identifiants);
                                     request.getRequestDispatcher(EmployesConstantes.PAGE_CHOIX).forward(request, response);
 
-                                } else {
-
-                                    request.setAttribute("cleMessageErreur", EmployesConstantes.ERREUR_INFOS_CONN_KO);
-                                    request.getRequestDispatcher(EmployesConstantes.PAGE_INDEX).forward(request, response);
                                 }
                             }
+
+                            request.setAttribute("cleMessageErreur", EmployesConstantes.ERREUR_INFOS_CONN_KO);
+                            request.getRequestDispatcher(EmployesConstantes.PAGE_INDEX).forward(request, response);
                         }
                     }
                     break;
+            
+       
 
-                case EmployesConstantes.ACTION_VOIR_AJOUTER:
+    
+
+case EmployesConstantes.ACTION_VOIR_AJOUTER:
                     request.getRequestDispatcher(EmployesConstantes.PAGE_AJOUTER_UN_EMPLOYE).forward(request, response);
                     break;
 
@@ -223,7 +226,7 @@ public class Controleur extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -237,7 +240,7 @@ public class Controleur extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -248,7 +251,7 @@ public class Controleur extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
