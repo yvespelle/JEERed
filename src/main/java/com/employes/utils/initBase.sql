@@ -15,6 +15,7 @@ CREATE TABLE IDENTIFIANTS (
 
 /*Insertion de l'utilisateur admin*/
 INSERT INTO IDENTIFIANTS(LOGIN,MDP) VALUES('admin','admin');
+INSERT INTO IDENTIFIANTS(LOGIN,MDP) VALUES('test','test');
 
 /**** CIBLE : MySQL ****/
 
